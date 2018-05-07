@@ -1,6 +1,6 @@
 <div [class.completed]="task.completed" [class.editing]="editing">
   <div class="view">
-      <button [class.completed]="task.completed" (click)="onCompleteTask(task)">complet</button>
+      <button [class.completed]="task.completed" (click)="onCompleteTask(task)">complete</button>
       <input value="{{task.title}}"/>
       <button (click)="onDeleteTask(task.id)">delete</button>
   </div>
