@@ -47,7 +47,7 @@ export class AppComponent {
 	completeAllTasks() {
 		this.tasks.map((task) => (task.completed = this.completeAll));
 		this.completeAll = !this.completeAll;
-		this.completeLabel = this.completeAll ? 'deselect all' : 'select all';
+		this.completeLabel = this.completeAll ? 'select all' : 'deselect all';
 	}
 
 	createTask(titleTask: string) {
