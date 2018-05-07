@@ -1,3 +1,17 @@
-<div>
-  Hola Mundo, {{person}}
-</div>
+<section class="taskapp">
+    <header class="header">
+      <h1>Tasks</h1>
+      <input class="new-task" placeholder="What needs to be done?" (change)="createTask($event.target.value)" >
+    </header>
+
+    <app-task *ngFor="let task of (tasks | viewCompleted : filterTask)" [task]="task" (deleteTask)="deleteTask($event)" (completeTask)="completeTask($event)"></app-task>
+    
+    <footer class="footer" *ngIf="tasks.length > 0">
+      <span class="task-count"><strong>{{tasks.length}}</strong> {{tasks.length == 1 ? 'item' : 'items'}} left</span>
+      <button appNewTask class="button-tasks" (click)='completeAllTasks()'>{{completeLabel}}</button>
+      <button appNewTask class="button-tasks" (click)='clearCompletedTasks()'>Clear completed</button>
+      <button appNewTask class="button-tasks" (click)="filterTasks()">{{filterLabel}}</button>
+    </footer>
+  </section>
+
+  -----------------------

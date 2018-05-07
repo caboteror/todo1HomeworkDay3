@@ -1,0 +1,8 @@
+<div [class.completed]="task.completed" [class.editing]="editing">
+  <div class="view">
+      <input [class.completed]="task.completed" type="checkbox" (change)="onCompleteTask(task)">
+      <input value="{{task.title}}"/>
+      <button (click)="onDeleteTask(task.id)">delete</button>
+  </div>
+  <input class="edit" *ngIf="editing" [value]="task.title" #editedtodo (blur)="onEditTask(task.title)">
+</div>
